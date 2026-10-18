@@ -161,13 +161,15 @@ export function DocumentEditor({ doc }: { doc: DocumentDetail }) {
         <RoleBadge access={doc.access} ownerName={doc.owner.name} />
         <div className="flex items-center gap-3">
           <SaveStatus status={status} detail={statusDetail} />
-          <button
-            type="button"
-            onClick={() => setShareOpen(true)}
-            className="rounded-full border border-line bg-card px-4 py-2 text-sm font-semibold hover:border-pine"
-          >
-            Share
-          </button>
+          {doc.access === "owner" ? (
+            <button
+              type="button"
+              onClick={() => setShareOpen(true)}
+              className="rounded-full border border-line bg-card px-4 py-2 text-sm font-semibold hover:border-pine"
+            >
+              Share
+            </button>
+          ) : null}
           {doc.access === "owner" ? (
             <button
               type="button"
@@ -283,15 +285,17 @@ export function DocumentEditor({ doc }: { doc: DocumentDetail }) {
         </div>
       </div>
 
-      <ShareDialog
-        documentId={doc.id}
-        ownerName={doc.owner.name}
-        access={doc.access}
-        shares={shares}
-        open={shareOpen}
-        onClose={() => setShareOpen(false)}
-        onSharesChange={setShares}
-      />
+      {doc.access === "owner" ? (
+        <ShareDialog
+          documentId={doc.id}
+          ownerName={doc.owner.name}
+          access={doc.access}
+          shares={shares}
+          open={shareOpen}
+          onClose={() => setShareOpen(false)}
+          onSharesChange={setShares}
+        />
+      ) : null}
     </div>
   );
 }
