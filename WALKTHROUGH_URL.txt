@@ -1,0 +1,6 @@
+No public video URL. This environment cannot publish to Loom or YouTube.
+
+Local recording:
+/cursor/stores/self/media/ajaia-docs-walkthrough.mp4
+
+That path is the project store media folder (resolved store bc-c93f09d1-fdca-45b1-9445-b679dd3bb296). The file is a screen recording of the running app, about 3 minutes 40 seconds, with on-screen captions. It is not a hosted link.

@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-source), "Segoe UI", sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --color-paper: #f3efe6;
+  --color-paper-2: #e7e0d2;
+  --color-card: #fffdf8;
+  --color-ink: #1d1915;
+  --color-muted: #6e655c;
+  --color-line: #e3d9c8;
+  --color-pine: #1f4d3a;
+  --color-pine-soft: #e5f0ea;
+  --color-clay: #c24e24;
+  --color-clay-soft: #f8ebe4;
+  --color-danger: #8f2d2d;
+  --color-danger-soft: #f8e6e4;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-pine);
+  outline-offset: 2px;
+}
+
+.tiptap {
+  min-height: 62vh;
+  outline: none;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--color-ink);
+}
+
+.tiptap h1,
+.tiptap h2,
+.tiptap h3 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  font-weight: 560;
+}
+
+.tiptap h1 {
+  font-size: 2.25rem;
+  margin: 1.15rem 0 0.55rem;
+}
+
+.tiptap h2 {
+  font-size: 1.6rem;
+  margin: 1rem 0 0.4rem;
+}
+
+.tiptap h3 {
+  font-size: 1.25rem;
+  margin: 0.9rem 0 0.35rem;
+}
+
+.tiptap p {
+  margin: 0.55rem 0;
+}
+
+.tiptap ul,
+.tiptap ol {
+  margin: 0.45rem 0;
+  padding-left: 1.4rem;
+}
+
+.tiptap ul {
+  list-style: disc;
+}
+
+.tiptap ol {
+  list-style: decimal;
+}
+
+.tiptap li {
+  margin: 0.15rem 0;
+}
+
+.tiptap li p {
+  margin: 0;
+}
+
+.tiptap u {
+  text-underline-offset: 3px;
+}
+
+.tiptap[contenteditable="false"] {
+  cursor: default;
+}
+
+dialog.share-dialog {
+  margin: auto;
+  width: min(32rem, calc(100vw - 2rem));
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+dialog.share-dialog::backdrop {
+  background: rgba(29, 25, 21, 0.45);
+}

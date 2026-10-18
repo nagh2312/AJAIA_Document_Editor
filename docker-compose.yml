@@ -1,0 +1,13 @@
+services:
+  ajaia-docs:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: file:/data/dev.db
+    volumes:
+      - ajaia-data:/data
+    restart: unless-stopped
+
+volumes:
+  ajaia-data:
